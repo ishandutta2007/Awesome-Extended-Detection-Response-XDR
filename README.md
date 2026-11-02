@@ -144,7 +144,7 @@ Self-hosted, community-driven XDR, EDR, SIEM, SOAR, and telemetry platforms. Ran
 
 ### ⭐ Open-Source Repositories Ranked by Stars
 
-| 🛠️ Project Name | 🌟 GitHub Stars Badge (Links to Stargazers) | 💻 Primary Stack / Architecture | 📜 License | 🎯 Security Focus Area |
+| 🛠️ Project Name | 🌟 GitHub_Stars_Badge (Links to Stargazers) | 💻 Primary Stack / Architecture | 📜 License | 🎯 Security Focus Area |
 | :--- | :--- | :--- | :--- | :--- |
 | **[osquery](https://github.com/osquery/osquery)** | <a href="https://github.com/osquery/osquery/stargazers"><img src="https://img.shields.io/github/stars/osquery/osquery?style=social&label=Stars" alt="osquery stars" /></a> | C++, SQLite, CMake | Apache-2.0 | Endpoint Telemetry & SQL Analytics |
 | **[Wazuh](https://github.com/wazuh/wazuh)** | <a href="https://github.com/wazuh/wazuh/stargazers"><img src="https://img.shields.io/github/stars/wazuh/wazuh?style=social&label=Stars" alt="Wazuh stars" /></a> | C, C++, OpenSearch, Python | GPL-2.0 | Unified XDR & SIEM Platform |
