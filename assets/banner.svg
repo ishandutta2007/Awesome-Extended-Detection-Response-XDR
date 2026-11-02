@@ -1,0 +1,215 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 380" width="100%" height="380" style="background:#090d16; border-radius:16px; overflow:hidden;">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#060911" />
+      <stop offset="50%" stop-color="#0c1322" />
+      <stop offset="100%" stop-color="#0a192f" />
+    </linearGradient>
+
+    <linearGradient id="cyberCyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f2fe" />
+      <stop offset="100%" stop-color="#4facfe" />
+    </linearGradient>
+
+    <linearGradient id="accentPurple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7928ca" />
+      <stop offset="100%" stop-color="#ff0080" />
+    </linearGradient>
+
+    <linearGradient id="shieldGlow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00f5d4" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#0077b6" stop-opacity="0.2" />
+    </linearGradient>
+
+    <!-- Filters -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Pattern -->
+    <pattern id="cyberGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#172a45" stroke-width="0.8" stroke-opacity="0.6"/>
+      <circle cx="40" cy="40" r="1.5" fill="#00f2fe" fill-opacity="0.3"/>
+    </pattern>
+
+    <style>
+      @keyframes pulseRadar {
+        0% { r: 10px; opacity: 0.9; }
+        50% { opacity: 0.5; }
+        100% { r: 160px; opacity: 0; }
+      }
+      @keyframes pulseRadar2 {
+        0% { r: 10px; opacity: 0.8; }
+        50% { opacity: 0.4; }
+        100% { r: 240px; opacity: 0; }
+      }
+      @keyframes radarSweep {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      @keyframes streamFlow {
+        0% { stroke-dashoffset: 400; }
+        100% { stroke-dashoffset: 0; }
+      }
+      @keyframes floatNode {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-8px); }
+      }
+      @keyframes floatPill {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(6px); }
+      }
+
+      .radar-wave-1 {
+        animation: pulseRadar 3.5s cubic-bezier(0.2, 0.8, 0.4, 1) infinite;
+        transform-origin: 1040px 190px;
+      }
+      .radar-wave-2 {
+        animation: pulseRadar2 3.5s cubic-bezier(0.2, 0.8, 0.4, 1) infinite 1.7s;
+        transform-origin: 1040px 190px;
+      }
+      .radar-spinner {
+        transform-origin: 1040px 190px;
+        animation: radarSweep 6s linear infinite;
+      }
+      .telemetry-line {
+        stroke-dasharray: 20, 10;
+        animation: streamFlow 12s linear infinite;
+      }
+      .node-float-1 {
+        animation: floatNode 4s ease-in-out infinite;
+      }
+      .node-float-2 {
+        animation: floatPill 5s ease-in-out infinite 1s;
+      }
+      .title-text {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 800;
+        fill: #ffffff;
+        letter-spacing: -0.5px;
+      }
+      .subtitle-text {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 400;
+        fill: #94a3b8;
+      }
+      .badge-label {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+      }
+    </style>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="100%" height="100%" fill="url(#bgGrad)" />
+  <rect width="100%" height="100%" fill="url(#cyberGrid)" />
+
+  <!-- Ambient Glow Blobs in Background -->
+  <circle cx="150" cy="80" r="140" fill="#00f2fe" opacity="0.08" filter="url(#glow)"/>
+  <circle cx="1040" cy="190" r="180" fill="#7928ca" opacity="0.12" filter="url(#glow)"/>
+  <circle cx="650" cy="340" r="120" fill="#00f5d4" opacity="0.06" filter="url(#glow)"/>
+
+  <!-- Telemetry Lines -->
+  <path d="M -20 280 C 300 280, 420 320, 800 290 S 1100 240, 1220 250" fill="none" stroke="#00f2fe" stroke-width="1.5" stroke-opacity="0.3" class="telemetry-line" />
+  <path d="M -20 310 C 250 250, 520 280, 750 330 S 1050 320, 1220 310" fill="none" stroke="#7928ca" stroke-width="1.5" stroke-opacity="0.3" class="telemetry-line" style="animation-direction: reverse;"/>
+
+  <!-- Radar Telemetry Widget on Right (Background element) -->
+  <g opacity="0.6">
+    <circle cx="1040" cy="190" r="150" fill="none" stroke="#1e3a5f" stroke-width="1.2"/>
+    <circle cx="1040" cy="190" r="100" fill="none" stroke="#1e3a5f" stroke-width="1.2"/>
+    <circle cx="1040" cy="190" r="50" fill="none" stroke="#00f2fe" stroke-width="1" stroke-opacity="0.5"/>
+    <line x1="890" y1="190" x2="1190" y2="190" stroke="#1e3a5f" stroke-width="1"/>
+    <line x1="1040" y1="40" x2="1040" y2="340" stroke="#1e3a5f" stroke-width="1"/>
+
+    <!-- Dynamic Radar Waves -->
+    <circle cx="1040" cy="190" r="10" fill="none" stroke="#00f2fe" stroke-width="2" class="radar-wave-1" />
+    <circle cx="1040" cy="190" r="10" fill="none" stroke="#00f5d4" stroke-width="1.5" class="radar-wave-2" />
+
+    <!-- Radar Sweep Needle -->
+    <g class="radar-spinner">
+      <path d="M 1040 190 L 1180 150 A 150 150 0 0 0 1040 40 Z" fill="url(#shieldGlow)" opacity="0.25"/>
+      <line x1="1040" y1="190" x2="1180" y2="150" stroke="#00f5d4" stroke-width="2" filter="url(#softGlow)"/>
+    </g>
+
+    <!-- Radar Target Nodes -->
+    <circle cx="1110" cy="130" r="4.5" fill="#ff0080" filter="url(#softGlow)"/>
+    <circle cx="980" cy="230" r="3.5" fill="#00f2fe" filter="url(#softGlow)"/>
+    <circle cx="1080" cy="250" r="4" fill="#00f5d4" filter="url(#softGlow)"/>
+  </g>
+
+  <!-- Left Shield Icon / Crosshair Symbol -->
+  <g transform="translate(80, 55)" class="node-float-1">
+    <rect x="0" y="0" width="70" height="70" rx="18" fill="#111c30" stroke="#00f2fe" stroke-width="1.5" filter="url(#softGlow)" />
+    <!-- Shield / Radar Logo -->
+    <path d="M 35 16 L 51 22 V 37 C 51 47 44 54 35 57 C 26 54 19 47 19 37 V 22 Z" fill="none" stroke="url(#cyberCyan)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="35" cy="35" r="5" fill="#00f2fe" filter="url(#softGlow)"/>
+    <line x1="35" y1="26" x2="35" y2="30" stroke="#00f5d4" stroke-width="2" stroke-linecap="round"/>
+    <line x1="35" y1="40" x2="35" y2="44" stroke="#00f5d4" stroke-width="2" stroke-linecap="round"/>
+    <line x1="26" y1="35" x2="30" y2="35" stroke="#00f5d4" stroke-width="2" stroke-linecap="round"/>
+    <line x1="40" y1="35" x2="44" y2="35" stroke="#00f5d4" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <!-- FOREGROUND: Header & Title (Clear, High Contrast, Guaranteed Front Z-index) -->
+  <g transform="translate(170, 78)">
+    <text class="badge-label" fill="#00f2fe" letter-spacing="1.5">⚡ UNIFIED SECURITY TELEMETRY &amp; THREAT CORRELATION</text>
+  </g>
+
+  <g transform="translate(80, 168)">
+    <text class="title-text" font-size="44">Awesome Extended Detection</text>
+    <text class="title-text" font-size="44" x="650" fill="url(#cyberCyan)">&amp; Response</text>
+  </g>
+
+  <g transform="translate(80, 208)">
+    <text class="subtitle-text" font-size="18">
+      A curated intelligence guide to top enterprise SaaS &amp; open-source XDR, EDR, SIEM, and SOAR platforms
+    </text>
+  </g>
+
+  <!-- Interactive Floating Security Feature Badges / Pills -->
+  <g transform="translate(80, 260)" class="node-float-1">
+    <rect width="130" height="38" rx="19" fill="#12233f" stroke="#00f2fe" stroke-width="1.2"/>
+    <circle cx="22" cy="19" r="6" fill="#00f2fe" filter="url(#softGlow)"/>
+    <text class="badge-label" x="38" y="24" fill="#e2e8f0">Endpoint (EDR)</text>
+  </g>
+
+  <g transform="translate(225, 260)" class="node-float-2">
+    <rect width="130" height="38" rx="19" fill="#1a1c38" stroke="#7928ca" stroke-width="1.2"/>
+    <circle cx="22" cy="19" r="6" fill="#ff0080" filter="url(#softGlow)"/>
+    <text class="badge-label" x="38" y="24" fill="#e2e8f0">Network (NDR)</text>
+  </g>
+
+  <g transform="translate(370, 260)" class="node-float-1">
+    <rect width="125" height="38" rx="19" fill="#0d2b2f" stroke="#00f5d4" stroke-width="1.2"/>
+    <circle cx="22" cy="19" r="6" fill="#00f5d4" filter="url(#softGlow)"/>
+    <text class="badge-label" x="38" y="24" fill="#e2e8f0">Identity (ITDR)</text>
+  </g>
+
+  <g transform="translate(510, 260)" class="node-float-2">
+    <rect width="130" height="38" rx="19" fill="#1b253b" stroke="#38bdf8" stroke-width="1.2"/>
+    <circle cx="22" cy="19" r="6" fill="#38bdf8" filter="url(#softGlow)"/>
+    <text class="badge-label" x="38" y="24" fill="#e2e8f0">Cloud (CDR/CWPP)</text>
+  </g>
+
+  <g transform="translate(655, 260)" class="node-float-1">
+    <rect width="135" height="38" rx="19" fill="#2d1733" stroke="#f43f5e" stroke-width="1.2"/>
+    <circle cx="22" cy="19" r="6" fill="#f43f5e" filter="url(#softGlow)"/>
+    <text class="badge-label" x="38" y="24" fill="#e2e8f0">Auto-SOAR Playbooks</text>
+  </g>
+
+  <!-- Border Frame Accent -->
+  <rect x="1" y="1" width="1198" height="378" rx="15" fill="none" stroke="#1e293b" stroke-width="1.5" />
+</svg>
